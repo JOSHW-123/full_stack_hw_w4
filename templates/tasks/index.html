@@ -7,17 +7,17 @@
         <div class="content">
           {{task.user.first_name}}
           <div class="description">
-            {{task.description}}
+            <a href="/tasks/{{task.id}}">{{task.description}}</a>
             <span class="duration">{{task.duration}} mins</span>
           </div>
           <div class="buttons">
+           
 
             <form action="/tasks/{{task.id}}/delete" method="post">
                 <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
             </form>
             <div>
               <form action="/tasks/{{task.id}}/show" method="get"></form>
-              <button></button>
             </div>
             
             {% if task.completed == True %}
